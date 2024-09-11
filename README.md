@@ -8,21 +8,21 @@
 HTML to PDF renderer using [Prawn PDF](https://github.com/prawnpdf/prawn).
 
 Features:
-- support a [good set](#supported-tags--attributes) of HTML tags and CSS properties;
-- handle [document styles](#document-styles);
+- support for a [good set](#supported-tags--attributes) of HTML tags and CSS properties;
+- the ability to handle [document styles](#document-styles);
 - custom [data attributes](#data-attributes) for Prawn PDF features;
-- no extra settings: it just parses an input HTML and outputs to a Prawn PDF document.
+- no extra settings: it just parses the input HTML and outputs to a Prawn PDF document.
 
 **Notice**: render HTML documents properly is not an easy task, this gem support only some HTML tags and a small set of CSS attributes. If you need more rendering accuracy take a look at other projects like *WickedPDF* or *PDFKit*.
 
-> [prawn-styled-text](https://github.com/blocknotes/prawn-styled-text) rewritten from scratch, finally!
+You can consider this a complete rewrite of [prawn-styled-text](https://github.com/blocknotes/prawn-styled-text) from scratch, finally!
 
-Please :star: if you like it.
+Please :star: this if you like it.
 
 ## Install
 
-- Add to your Gemfile: `gem 'prawn-html'` (and execute `bundle`)
-- Just call `PrawnHtml.append_html` on a `Prawn::Document` instance (see the examples)
+- Add `gem 'prawn-html'` to your Gemfile (and execute `bundle`)
+- Just call `PrawnHtml.append_html` on a `Prawn::Document` instance (as shown in the examples)
 
 ## Examples
 
@@ -33,7 +33,7 @@ PrawnHtml.append_html(pdf, '<h1 style="text-align: center">Just a test</h1>')
 pdf.render_file('test.pdf')
 ```
 
-To check some examples with the PDF output see [examples](examples/) folder.
+To check some examples with the PDF output see the [examples](examples/) folder.
 
 Alternative form using _PrawnHtml::Instance_ to preserve the context:
 
@@ -109,7 +109,7 @@ CSS attributes (dimensional units are ignored and considered in pixel):
 - **top**: see *position (absolute)*
 - **width**: for *img* tag, support also percentage, ex. `<img src="image.jpg" style="width: 50%; height: 200px"/>`
 
-The above attributes supports the `initial` value to reset them to their original value.
+The above attributes support the `initial` value to reset them to their original value.
 
 For colors, the supported formats are:
 - 3 hex digits, ex. `color: #FB1`;
@@ -122,11 +122,11 @@ For colors, the supported formats are:
 Some custom data attributes are used to pass options:
 
 - **dash**: for *hr* tag, accepts an integer or a list of integers), ex. `data-data="2, 4, 3"`
-- **mode**: allow to specify the text mode (stroke|fill||fill_stroke), ex. `data-mode="stroke"`
+- **mode**: allows you to specify the text mode (stroke|fill||fill_stroke), ex. `data-mode="stroke"`
 
 ## Document styles
 
-You can define document CSS rules inside an _head_ tag. Example:
+You can define document CSS rules inside a _head_ tag. For example:
 
 ```html
 <!DOCTYPE html>
@@ -171,9 +171,9 @@ class SomeController < ApplicationController
 end
 ```
 
-More details in this blogpost: [generate PDF from HTML](https://www.blocknot.es/2021-08-20-rails-generate-pdf-from-html/)
+More details are available in this blogpost: [generate PDF from HTML](https://www.blocknot.es/2021-08-20-rails-generate-pdf-from-html/)
 
-## Do you like it? Star it!
+## Do you like this? Star it!
 
 If you use this component just star it. A developer is more motivated to improve a project when there is some interest.
 
